@@ -8,37 +8,51 @@ test("renders App without crashing", () => {
   render(<App />);
 });
 
-test('checks label First Name', () =>{
-  const { getByText } = render(<ContactForm />);
 
-  getByText(/First Name/i);  
-});
+describe('Tests names form names', () => {
+  test('checks label First Name', () =>{
+    const { getByText } = render(<ContactForm />);
 
-test('checks label Last Name', () =>{
-  const { getByText } = render(<ContactForm />);
+    getByText(/First Name/i);  
+  });
 
-  getByText(/Last Name/i);
-});
+  test('checks label Last Name', () =>{
+    const { getByText } = render(<ContactForm />);
 
-test('checks label Email', () =>{
-  const { getByText } = render(<ContactForm />);
+    getByText(/Last Name/i);
+  });
 
-  getByText(/email/i);
-});
+  test('checks label Email', () =>{
+    const { getByText } = render(<ContactForm />);
 
-test('checks label Message', () =>{
-  const { getByText } = render(<ContactForm />);
+    getByText(/email/i);
+  });
 
-  getByText(/message/i);
-});
-  
+  test('checks label Message', () =>{
+    const { getByText } = render(<ContactForm />);
+
+    getByText(/message/i);
+  });
+
+})
+
 test('tests Submit button not active', () =>{
   const { submit } = render(<ContactForm />);
 
   expect(submit).toBeFalsy();
 });
 
-
+describe('Simple Numbers Tests', () => {
+  test('Compare', () => {
+    expect(2).toEqual(2)
+  })
+  test('Greater than', () => {
+    expect(4).toBeGreaterThan(1)
+  })
+  test('Less than', () => {
+    expect(2).toBeLessThan(5)
+  })
+})
 
 
 
